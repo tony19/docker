@@ -27,8 +27,8 @@ USER root
 RUN mv -f /etc/sudoers.bak /etc/sudoers
 
 RUN /bin/bash -l -c "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
-RUN /bin/bash -l -c "echo 'source ~/.rvm/scripts/rvm' >> ~/.bashrc"
-RUN /bin/bash -l -c "echo 'source ~/.rvm/scripts/rvm' >> ~/.zshrc"
+RUN /bin/bash -l -c "echo '[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm' >> ~/.bashrc"
+RUN /bin/bash -l -c "echo '[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm' >> ~/.zshrc"
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
