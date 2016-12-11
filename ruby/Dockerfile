@@ -11,7 +11,7 @@ RUN apt-get install -y curl patch gawk g++ gcc make libc6-dev patch libreadline6
 
 # disable sudo password requirement to workaround no tty for _rvmsudo
 RUN cp /etc/sudoers /etc/sudoers.bak
-RUN echo '${USERNAME} ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # install RVM for newly-created '${USERNAME}' user
 RUN useradd -ms /bin/bash -g sudo "${USERNAME}" && echo "${USERNAME}:${USERNAME}" | chpasswd
