@@ -26,10 +26,11 @@ RUN /bin/bash -l -c "rvm install ${RUBY_VERSION}"
 USER root
 RUN mv -f /etc/sudoers.bak /etc/sudoers
 
+# setup user's shells for rvm
+USER ${USERNAME}
 RUN /bin/bash -l -c "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
 RUN /bin/bash -l -c "echo '[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm' >> ~/.bashrc"
 RUN /bin/bash -l -c "echo '[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm' >> ~/.zshrc"
 
-USER ${USERNAME}
 WORKDIR /home/${USERNAME}
 CMD ["bash", "--login"]
