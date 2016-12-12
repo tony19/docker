@@ -30,3 +30,4 @@ RUN /bin/bash -l -c "gem install bundler foreman --no-ri --no-rdoc"
 RUN /bin/bash -l -c "rvm rubygems 2.6.3"
 
 EXPOSE 3000
+ADD scripts /scripts
