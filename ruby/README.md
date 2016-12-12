@@ -4,7 +4,7 @@
 ## Features
 
  * Based on `debian:jessie`
- * Latest stable RVM, installed as non-root
+ * RVM stable, installed as non-root
  * Ruby 2.3.1
  * Creates non-root user with sudo priveleges
  * Build arguments:
