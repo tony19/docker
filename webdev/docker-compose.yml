@@ -1,0 +1,12 @@
+version: '3'
+services:
+  sh:
+    build: .
+    command: bash
+    privileged: true
+    ports:
+     - "8080:8080"
+     - "6060:6060"
+    volumes:
+     - C:/Users/tony1/src:/home/tony/src
+     - C:/Users/tony1/.ssh:/home/tony/.ssh
